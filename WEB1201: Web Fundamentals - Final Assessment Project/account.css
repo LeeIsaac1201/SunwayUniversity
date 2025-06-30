@@ -1,0 +1,212 @@
+/* General body styling, including background image, centering content, and font settings. */
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('background_image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-color: #f0f0f0;
+    padding-top: 100px;
+}
+
+/* Header styling */
+header, #header {
+    position: fixed;
+    top: 0;
+    min-height: 75px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d3d3d3;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Logo styling */
+.logo {
+    width: 60vw;
+    display: flex;
+    align-items: center;
+}
+
+#header-img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+/* Site title text styling */
+.site-title {
+    font-family: 'Pacifico', cursive;
+    font-size: 2rem;
+    color: black;
+    margin-left: 15px;
+    vertical-align: middle;
+}
+
+/* Navigation bar styling */
+#nav-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+#nav-bar ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    height: 100%;
+}
+
+#nav-bar ul li {
+    margin: 0 15px;
+}
+
+.nav-button {
+    display: block;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: black;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.nav-button:hover {
+    background-color: #ddd;
+}
+
+/* Main container for the registration and log in forms. */
+.container {
+    background-color: transparent;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+/* General styling for the boxes containing the forms. */
+.box {
+    background-color: white;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    flex: 1;
+}
+
+/* Additional styling for the log-in box. */
+.box.log-in {
+    margin-top: 60px;
+}
+
+/* Styling for headings. */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2f4f4f;
+}
+
+/* Styling for form labels. */
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #2f4f4f;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Styling for form elements within the boxes. */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Styling for text, email, and password input fields. */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px 5px;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 2px solid #2e8b57;
+    outline: none;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* General styling for all input fields. */
+input {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Styling for input field placeholders. */
+input::placeholder {
+    color: #2e8b57;
+}
+
+/* Styling for buttons. */
+button {
+    width: auto;
+    min-width: 80px;
+    max-width: 120px;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    align-self: center;
+}
+
+/* Styling for button hover state. */
+button:hover {
+    background-color: #45a049;
+    color: #2e8b57;
+    border: 2px dotted #2e8b57;
+}
+
+/* Styling for the notification elements for registration and log in. */
+#registration-notification, #login-notification {
+    display: none;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-sizing: border-box;
+    z-index: 1000;
+    display: inline-block;
+    max-width: 30%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Copyright */
+.copyright-notice {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: white;
+}

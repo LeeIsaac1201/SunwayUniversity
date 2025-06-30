@@ -1,0 +1,555 @@
+/* Reset margin, padding, and box-sizing for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Style for the body element */
+body {
+  background-color: #eee;
+  font-family: 'Lato', sans-serif;
+  padding-top: 75px;
+  margin-top: 75px;
+}
+
+/* Remove list style for list items */
+li {
+  list-style: none;
+}
+
+/* Style for anchor tags */
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+/* Container class for layout */
+.container {
+  max-width: 1000px;
+  width: 100%;
+}
+
+/* Button styling */
+.btn {
+  width: 150px;
+  height: 50px;
+  font-size: 1em;
+  font-weight: 900;
+  text-transform: uppercase;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #0074D9;
+  color: #fff;
+  border: none;
+  text-align: center;
+  line-height: 50px;
+}
+
+/* Button hover effect */
+.btn:hover {
+  background-color: #0056b3;
+}
+
+/* Flexbox grid layout */
+.grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Wrapper for the entire page */
+#page-wrapper {
+  position: relative;
+}
+
+/* Header styling */
+header, #header {
+  position: fixed;
+  top: 0;
+  min-height: 75px;
+  padding: 0px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d3d3d3;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Logo styling */
+.logo {
+  width: 60vw;
+  display: flex;
+  align-items: center;
+}
+
+/* Style for the site title/logo text */
+.site-title {
+  font-family: 'Pacifico', cursive;
+  font-size: 2rem;
+  color: black;
+  margin-left: 15px;
+  vertical-align: middle;
+}
+
+/* Logo image styling */
+.logo > img {
+  width: 100%;
+  height: 100%;
+  max-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-left: 20px;
+}
+
+/* Header image styling */
+#header-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+/* Responsive header for small screens */
+@media (max-width: 600px) {
+  header {
+    flex-wrap: wrap;
+  }
+}
+
+/* Responsive logo for small screens */
+@media (max-width: 650px) {
+  .logo {
+    margin-top: 15px;
+    width: 100%;
+    position: relative;
+  }
+  .logo > img {
+    margin: 0 auto;
+  }
+}
+
+/* Navigation styling */
+nav {
+  font-weight: 400;
+}
+
+/* Navigation bar styling */
+#nav-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+/* Navigation bar list styling */
+#nav-bar ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  height: 100%;
+}
+
+/* Navigation bar list item styling */
+#nav-bar ul li {
+  margin: 0 15px;
+}
+
+/* Navigation bar link styling */
+#nav-bar ul li a {
+  text-decoration: none;
+  color: #333;
+  padding: 10px 15px;
+  display: block;
+}
+
+/* Navigation bar link hover effect */
+#nav-bar ul li a:hover {
+  background-color: #ddd;
+}
+
+/* Responsive navigation for small screens */
+@media (max-width: 650px) {
+  nav {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 50px;
+  }
+  nav li {
+    padding-bottom: 5px;
+  }
+}
+
+/* Hero section styling */
+#hero {
+  border: 2px solid black;
+  padding: 24px 16px;
+  margin-top: -40px;
+  text-align: center;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Hero section heading styling */
+#hero > h2 {
+  margin-bottom: 20px;
+  word-wrap: break-word;
+}
+
+/* Hero section email input styling */
+#hero input[type='email'] {
+  max-width: 275px;
+  width: 100%;
+  padding: 5px;
+}
+
+/* Hero section submit button styling */
+#hero input[type='submit'] {
+  max-width: 150px;
+  width: 100%;
+  height: 30px;
+  margin: 15px 0;
+  border: 0;
+  background-color: #f1c40f;
+}
+
+/* Hero section submit button hover effect */
+#hero input[type='submit']:hover {
+  background-color: orange;
+  transition: background-color 1s;
+}
+
+/* Responsive hero section for small screens */
+@media (max-width: 650px) {
+  #hero {
+    margin-top: 100px;
+  }
+}
+
+/* Features section styling */
+#features {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 5px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+/* Features item styling */
+#features > .feature-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+/* Features icon styling */
+#features .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 100px;
+  color: darkorange;
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+
+/* Features description styling */
+#features .desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 600px;
+  padding: 0;
+  flex-grow: 1;
+}
+
+/* Hide features icon on small screens */
+@media (max-width: 550px) {
+  #features .icon {
+    display: none;
+  }
+  #features .desc {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    height: 150px;
+  }
+}
+
+/* Responsive features section for small screens */
+@media (max-width: 650px) {
+  #features {
+    margin-top: 0;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Video section styling */
+#video, #video_2, #video_3 {
+  border: 0;
+  margin-bottom: 30px;
+}
+
+/* Video class styling */
+.video {
+  margin-bottom: 30px;
+}
+
+/* Ensure videos stack vertically */
+#videos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Center and space the heading in the videos section */
+#videos h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Responsive video class for small screens */
+@media (max-width: 800px) {
+  .video {
+    margin-bottom: 20px;
+  }
+}
+
+/* How it works section styling */
+#how-it-works {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+/* How it works iframe styling */
+#how-it-works > iframe {
+  max-width: 560px;
+  width: 100%;
+}
+
+/* Sustainability practices section styling */
+#our_sustainability_practices {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  margin-left: 85px;
+}
+
+/* Add spacing to sustainability feature items */
+.sustainable-materials,
+.eco-friendly-shipping,
+.quality-sustainability {
+  margin-right: 15px;
+}
+
+/* Reduce space below headings in sustainability description */
+#our_sustainability_practices .desc h2 {
+  margin-bottom: 5px;
+}
+
+/* Center and space section titles for sustainability, videos, and products */
+#sustainability-title,
+#videos > h2,
+#products-title {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+/* Pricing section styling */
+#pricing {
+  margin-top: 60px;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/* Product card styling */
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: calc(100% / 3 - 20px);
+  margin: 10px;
+  border: 1px solid #000;
+  border-radius: 3px;
+  padding: 20px;
+  flex: 1;
+  height: 400px;
+  box-sizing: border-box;
+}
+
+/* Product level styling */
+.product > .level {
+  background-color: green;
+  color: white;
+  padding: 15px 0;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* Product heading styling */
+.product > h2 {
+  margin-top: 15px;
+  font-size: 1.5rem;
+}
+
+/* Product list styling */
+.product > ol {
+  margin: 15px 0;
+  list-style: none;
+  padding: 0;
+}
+
+/* Product list item styling */
+.product > ol > li {
+  padding: 5px 0;
+  margin-bottom: 10px;
+}
+
+/* Product button styling */
+.product > button {
+  width: 150px;
+  height: 50px;
+  border: 0;
+  margin: 15px 0;
+  background-color: #f1c40f;
+  font-weight: 400;
+  text-align: center;
+  line-height: 50px;
+}
+
+/* Product button hover effect */
+.product > button:hover {
+  background-color: orange;
+  transition: background-color 1s;
+}
+
+/* Responsive pricing section for small screens */
+@media (max-width: 800px) {
+  #pricing {
+    flex-direction: column;
+  }
+  .product {
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+}
+
+/* Eco-friendly products section styling */
+#eco-friendly_products {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Quantity input styling */
+.quantity-input {
+  width: 50px;
+  font-size: 1rem;
+}
+
+/* Footer styling */
+footer {
+  margin-top: 30px;
+  background-color: #ddd;
+  padding: 20px;
+}
+
+/* Footer list styling */
+footer > ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Footer list item styling */
+footer > ul > li {
+  padding: 0 10px;
+}
+
+/* Footer span styling */
+footer > span {
+  margin-top: 5px;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.9em;
+  color: #444;
+}
+
+/* Footer container styling */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Footer container nav link styling */
+.footer-container .nav-link {
+  margin-right: auto;
+}
+
+/* Notification styling */
+.notification {
+  display: none;
+  padding: 15px;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  font-size: 16px;
+  width: 80%;
+  max-width: 400px;
+}
+
+/* Success notification styling */
+.notification.success {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Error notification styling */
+.notification.error {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Close button styling */
+.close-btn {
+  float:right;
+  font-size: 20px;
+  line-height: 20px;
+  cursor: pointer;
+}

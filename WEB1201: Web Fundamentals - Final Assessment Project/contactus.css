@@ -1,0 +1,253 @@
+/* Reset margin, padding, and box-sizing for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Style for the body element */
+body {
+  background-color: #eee;
+  font-family: 'Lato', sans-serif;
+  padding-top: 75px;
+  margin-top: 75px;
+}
+
+/* Wrapper for the entire page */
+#page-wrapper {
+  position: relative;
+}
+
+/* Container class for layout */
+.container {
+  max-width: 1000px;
+  width: 100%;
+}
+
+/* Remove list style for list items */
+li {
+  list-style: none;
+}
+
+/* Style for anchor tags */
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+/* Header styling */
+header, #header {
+  position: fixed;
+  top: 0;
+  min-height: 75px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d3d3d3;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Logo styling */
+.logo {
+  width: 60vw;
+  display: flex;
+  align-items: center;
+}
+
+.logo > img {
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+  display: block;
+  margin-left: 20px;
+}
+
+/* Logo image styling */
+#header-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+/* Site title text styling */
+.site-title {
+  font-family: 'Pacifico', cursive;
+  font-size: 2rem;
+  color: black;
+  margin-left: 15px;
+  vertical-align: middle
+}
+
+/* Navigation bar styling */
+#nav-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+#nav-bar ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  height: 100%;
+}
+
+#nav-bar ul li {
+  margin: 0 15px;
+}
+
+.nav-button {
+  display: block;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: black;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Navigation button hover effect */
+.nav-button:hover {
+  background-color: #ddd;
+}
+
+/* Button styling */
+.btn {
+  width: 150px;
+  height: 50px;
+  font-size: 1em;
+  font-weight: 900;
+  text-transform: uppercase;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #0074D9;
+  color: #fff;
+  border: none;
+  text-align: center;
+  line-height: 50px;
+}
+
+/* Centered section/title styling */
+.centered-title {
+  text-align: center;
+}
+
+/* Contact Us section styling */
+#contact-us {
+  padding: 20px;
+}
+
+#contact-us h2 {
+  margin-bottom: 20px;
+}
+
+#contact-us p {
+  margin-bottom: 20px;
+}
+
+#contact-us ul {
+  margin-top: 20px;
+}
+
+#contact-us ul li {
+  margin-bottom: 10px;
+}
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#contact-form label {
+  margin-top: 10px;
+}
+
+#contact-form input,
+#contact-form textarea {
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+/* Contact Us form button styling */
+#contact-form button {
+  margin-top: 20px;
+  padding: 10px 24px;
+  min-width: 80px;
+  max-width: 120px;
+  width: auto;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: center;
+}
+
+#contact-form button:hover {
+  background-color: #45a049;
+}
+
+/* Notification styling */
+.notification {
+  display: none;
+  padding: 15px;
+  text-align: center;
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  font-size: 16px;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Success notification styling */
+.notification.success {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Error notification styling */
+.notification.error {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Close button styling */
+.close-btn {
+  float: right;
+  font-size: 20px;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+/* Footer styling */
+footer {
+  margin-top: 30px;
+  background-color: #ddd;
+  padding: 20px;
+  text-align: center;
+}
+
+footer > span {
+  font-size: 0.9em;
+  color: #444;
+}
+
+/* Copyright */
+.copyright-notice {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}

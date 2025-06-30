@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="checkout.css">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header id="header">
+        <div class="logo">
+            <img id="header-img" src="website_logo.png" alt="Ecosphere Essentials Logo">
+            <span class="site-title">Ecosphere Essentials</span>
+        </div>
+        <nav id="nav-bar">
+            <ul>
+                <li><a class="nav-button" href="home.html">Home</a></li>
+                <li><a class="nav-button" href="account.html">Account</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Notifications Section -->
+    <div id="order-success-notification" class="notification success" style="display: none;">
+        Order successfully placed! Thank you for shopping with us!
+        <span class="close-btn" onclick="closeNotification('order-success-notification')">&times;</span>
+    </div>
+    <div id="order-error-notification" class="notification error">
+        Your order summary is empty. Please add items to your cart before placing an order.
+        <span class="close-btn" onclick="closeNotification('order-error-notification')">&times;</span>
+    </div>
+    <div class="container">
+        <h2><u>Checkout</u></h2>
+        <form onsubmit="return handleFormSubmission(event)">
+            <div class="columns">
+                <!-- Shipping Details Section -->
+                <div class="column">
+                    <div class="section">
+                        <h3>Shipping Details</h3>
+                        <label for="full-name">Full Name:</label>
+                        <input type="text" id="full-name" name="full-name" required>
+                        <label for="address">Address:</label>
+                        <input type="text" id="address" name="address" required>                     
+                        <label for="city">City:</label>
+                        <input type="text" id="city" name="city" required>                     
+                        <label for="zip">Postal Code:</label>
+                        <input type="text" id="zip" name="zip" required>                     
+                        <label for="state">State:</label>
+                        <input type="text" id="state" name="state" required>               
+                        <label for="country">Country:</label>
+                        <input type="text" id="country" name="country" required>
+                    </div>
+                </div>
+                <!-- Payment Information Section -->
+                <div class="column">
+                    <div class="section">
+                        <h3>Payment Information</h3>
+                        <label for="card-name">Name on Card:</label>
+                        <input type="text" id="card-name" name="card-name" required>
+                        
+                        <label for="card-number">Card Number:</label>
+                        <input type="text" id="card-number" name="card-number" required>
+                        
+                        <label for="exp-date">Expiration Date:</label>
+                        <input type="text" id="exp-date" name="exp-date" placeholder="MM/YY" required>
+                        
+                        <label for="cvv">Card Verification Value (CVV):</label>
+                        <input type="text" id="cvv" name="cvv" required>
+                    </div>
+                </div>
+                <!-- Order Summary Section -->
+                <div class="column">
+                    <div class="section">
+                        <h3>Order Summary</h3>
+                        <div id="order-summary">
+                        <!-- Items will be dynamically inserted here -->
+                        </div>
+                        <p id="total-amount">Total: $0.00</p>
+                        <div class="button-row">
+                            <button type="submit">Place Order</button>
+                            <a href="home.html" class="return-home-button">Return to Home</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-notice">Copyright &copy; 2024, Ecosphere Essentials</div>
+        </form>
+    </div>
+    <script src="checkout.js"></script>
+</body>
+</html>

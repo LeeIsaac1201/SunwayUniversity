@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecosphere Essentials</title>
+  <link rel="stylesheet" href="home.css">
+  <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Notifications Section -->
+  <div id="notification" class="notification success">
+    Email address successfully submitted!
+    <span class="close-btn" onclick="closeNotification()">&times;</span>
+  </div>
+  <div id="error-notification" class="notification error">
+    <span class="close-btn" onclick="closeNotification('error-notification')">&times;</span>
+    Please enter a valid email address.
+  </div>
+  <div id="cart-announcement" class="notification success">
+    <span class="close-btn" onclick="closeNotification('cart-announcement')">&times;</span>
+  </div>
+  <div id="page-wrapper">
+    <!-- Header Section -->
+    <header id="header">
+      <div class="logo">
+        <img id="header-img" src="website_logo.png" alt="website_logo">
+        <span class="site-title">Ecosphere Essentials</span>
+      </div>
+      <nav id="nav-bar">                  
+        <ul>
+          <li><a class="nav-link" href="#eco-friendly_products">Eco-Friendly Products</a></li>
+          <li><a class="nav-link" href="#our_sustainability_practices">Our Sustainability Practices</a></li>
+          <li><a class="nav-link" href="#videos">Watch Our Sustainability Videos</a></li>
+          <li><a class="nav-link" href="account.html">Account</a></li>
+          <li><a class="nav-link" href="checkout.html">Checkout</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Hero Section -->
+    <section id="hero">
+      <h2>Join our community and stay updated with our sustainable journey!</h2>
+      <form id="form" onsubmit="return validateEmail(event)">
+        <input name="email" id="email" type="email" placeholder="Enter your email address" required>
+        <input id="submit" type="submit" value="Get Started" style="text-align: center; font-weight: bold">
+      </form>
+    </section>
+    <!-- Sustainability Practices Section -->
+    <h2 id="sustainability-title"><u>Our Sustainability Practices</u></h2>
+    <section id="our_sustainability_practices">
+      <div id="features">
+        <div class="grid">
+          <div class="icon">
+            <i class="fa fa-3x fa-leaf"></i>
+          </div>
+          <table>
+            <tr>
+              <td>
+                <img class="sustainable-materials" src="https://i.ibb.co/VLxGM2x/building-materials.png" alt="building-materials" width="100" height="100">
+              </td>
+              <td>
+                <div class="desc">
+                  <h2>Sustainable Materials</h2>
+                  <p>Our products use high-quality, sustainable materials that are sourced responsibly to minimise environmental impact. This ensures the longevity of your purchase and supports eco-friendly practices.</p>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="grid">
+          <div class="icon">
+            <i class="fa fa-3x fa-globe"></i>
+          </div>
+          <table>
+            <tr>
+              <td>
+                <img class="eco-friendly-shipping" src="https://i.ibb.co/dJz7BVc/Eco-Friendly-Delivery.png" alt="Eco-Friendly-Delivery" width="100" height="100">
+              </td>
+              <td>
+                <div class="desc">
+                  <h2>Eco-Friendly Shipping</h2>
+                  <p>We prioritise green shipping methods to reduce carbon footprint. Your order will be delivered in recyclable packaging, and we offset the carbon emissions of each delivery.</p>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="grid">
+          <div class="icon">
+            <i class="fa fa-3x fa-certificate"></i>
+          </div>
+          <table>
+            <tr>
+              <td>
+                <img class="quality-sustainability" src="https://i.ibb.co/ZgGxx96/badge.png" alt="Quality & Sustainability" width="100" height="100">
+              </td>
+              <td>
+                <div class="desc">
+                  <h2>Quality & Sustainability</h2>
+                  <p>Our commitment to quality and sustainability is at the heart of everything we do. We strive to deliver products that not only meet but exceed our customers' expectations while also minimising our environmental impact.</p>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </section>
+    <!-- Videos Section -->
+    <section id="videos">
+      <h2><u>Watch Our Sustainability Videos</u></h2>
+      <iframe class="video" title="Video 1" width="560" height="315" src="https://www.youtube.com/embed/9EnY_Nyu8m8?si=GoB1X82jmFxduWSm" style="border: 0;" allowfullscreen></iframe>
+      <iframe class="video" title="Video 2" width="560" height="315" src="https://www.youtube.com/embed/Nux_AvcZXtc?si=A2p_zEG3Ci31DCcf" style="border: 0;" allowfullscreen></iframe>
+      <iframe class="video" title="Video 3" width="560" height="315" src="https://www.youtube.com/embed/IuXw7xxZmww?si=KV2b23r6BwCp5tf1" style="border: 0;" allowfullscreen></iframe>
+    </section>
+    <!-- Products Section -->
+    <h2 id="products-title"><u>Eco-Friendly Products</u></h2> 
+    <section id="eco-friendly_products">
+      <div class="product" id="bamboo-straws">
+        <div class="level">Bamboo Straws</div>
+        <h2>$10</h2>
+        <ol>
+          <li>Reusable and biodegradable.</li>
+          <li>Comes with a cleaning brush.</li>
+          <li>Perfect for smoothies and juices.</li>
+          <li>Reduces plastic waste.</li>
+        </ol>
+        <div class="quantity-control">
+          <input class="quantity-input" type="number" id="quantity-bamboo-straws" value="1" min="1">
+        </div>
+        <button class="btn" onclick="addToCart('Bamboo Straws', 10, 'quantity-bamboo-straws')">Add to Cart</button>
+      </div>
+      <div class="product" id="recycled-bags">
+        <div class="level">Recycled Bags</div>
+        <h2>$15</h2>
+        <ol>
+          <li>Made from 100% recycled materials.</li>
+          <li>Durable and stylish.</li>
+          <li>Great for shopping and everyday use.</li>
+          <li>Supports circular economy.</li>
+        </ol>
+        <div class="quantity-control">
+          <input class="quantity-input" type="number" id="quantity-recycled-bags" value="1" min="1">
+        </div>
+        <button class="btn" onclick="addToCart('Recycled Bags', 15, 'quantity-recycled-bags')">Add to Cart</button>
+      </div>
+      <div class="product" id="solar-lantern">
+        <div class="level">Solar Lanterns</div>
+        <h2>$30</h2>
+        <ol>
+          <li>Powered by renewable solar energy.</li>
+          <li>Ideal for outdoor and emergency use.</li>
+          <li>Reduces electricity consumption.</li>
+          <li>Eco-friendly lighting solution.</li>
+        </ol>
+        <div class="quantity-control">
+          <input class="quantity-input" type="number" id="quantity-solar-lantern" value="1" min="1">
+        </div>
+        <button class="btn" onclick="addToCart('Solar Lantern', 30, 'quantity-solar-lantern')">Add to Cart</button>
+      </div>
+    </section>
+    <!-- Footer Section-->
+    <footer>
+      <div class="footer-container">
+        <a class="nav-link" href="contactus.html">Contact Us</a>
+        <span>Copyright &copy; 2024, Ecosphere Essentials</span>
+      </div>
+    </footer>
+  </div>
+  <script src="home.js"></script>
+</body>
+</html>

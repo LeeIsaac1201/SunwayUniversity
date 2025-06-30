@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Ecosphere Essentials</title>
+  <link rel="stylesheet" href="contactus.css">
+  <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header Section -->
+  <header id="header">
+    <div class="logo">
+      <img id="header-img" src="website_logo.png" alt="Ecosphere Essentials Logo">
+      <span class="site-title">Ecosphere Essentials</span>
+    </div>
+    <nav id="nav-bar">
+      <ul>
+        <li><a class="nav-button" href="home.html">Home</a></li>
+        <li><a class="nav-button" href="account.html">Account</a></li>
+        <li><a class="nav-button" href="checkout.html">Checkout</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Notifications Section -->
+  <div id="notification" class="notification success" style="display: none;">
+    Your message has been sent successfully!
+    <span class="close-btn" onclick="closeNotification('notification')">&times;</span>
+  </div>
+  <div id="error-notification" class="notification error" style="display: none;">
+    <span class="close-btn" onclick="closeNotification('error-notification')">&times;</span>
+    Please fill out all fields correctly.
+  </div>
+  <!-- Contact Us Section -->
+  <section id="contact-us">
+    <h2 class="centered-title"><u>Contact Us!</u></h2>
+    <p>If you have any questions, feel free to reach out to us through any of the following methods:</p>
+    <ul>
+      <li>Email: <a href="mailto:support@ecosphereessentials.com">support@ecosphereessentials.com</a></li>
+      <li>Phone: <a href="tel:+11234567890">+1 (123) 456-7890</a></li>
+    </ul>
+    <h2 class="centered-title"><u>Send Us A Message!</u></h2>
+    <form id="contact-form" onsubmit="return handleContactFormSubmission(event)">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="message">Your Message:</label>
+      <textarea id="message" name="message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+  <!-- Footer Section -->
+  <footer>
+    <div class="copyright-notice">Copyright &copy; 2024, Ecosphere Essentials</div>
+  </footer>
+  <script src="contactus.js"></script>
+</body>
+</html>
