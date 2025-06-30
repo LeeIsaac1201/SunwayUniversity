@@ -6,30 +6,20 @@ This project is a Python-based application designed to help book enthusiasts man
 
 ## Table of Contents
 1. [Project Overview](#project-overview)
-2. [Motivation](#motivation)
-3. [Features](#features)
-4. [Installation and Running Instructions](#installation-and-running-instructions)
-5. [Usage](#usage)
-6. [File Format](#file-format)
-7. [Example](#example)
-8. [Notes](#notes)
+2. [Features](#features)
+3. [Installation and Running Instructions](#installation-and-running-instructions)
+4. [Usage](#usage)
+5. [File Format](#file-format)
+6. [Example](#example)
+7. [Notes](#notes)
 9. [Credits](#credits)
-10. [License](#license)
+9. [License](#license)
 
 ---
 
 ## Project Overview
 
 This project provides a simple yet effective system to keep track of a personal book collection. Users can add, delete, update, display, and search for book records. The book information is stored in a text file (`books.txt`), which acts as a basic database. The application leverages Python fundamentals such as file processing, lists, conditional statements, loops, and user-defined functions.
-
----
-
-## Background
-
-Managing an extensive personal library can be overwhelming. This application was created to:
-- Simplify the process of tracking detailed book information (International Standard Book Number (ISBN), title, author, publisher, genre, year published, purchase date, and read status).
-- Provide a clear and intuitive menu-driven interface.
-- Demonstrate essential Python programming techniques in an academic context.
 
 ---
 
