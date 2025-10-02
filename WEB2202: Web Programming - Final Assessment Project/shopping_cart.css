@@ -1,0 +1,241 @@
+/* Global Styles */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('images/KLMarket06.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styling */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem 0;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+}
+
+header .logo {
+    height: 50px;
+    width: auto;
+    margin-right: 1rem;
+}
+
+header h1 {
+    margin: 0;
+    font-family: 'Pacifico', cursive;
+    font-size: 1.5rem;
+}
+
+/* Navigation Styling */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #ff9800;
+}
+
+nav ul li a i {
+    font-size: 1.2rem;
+}
+
+/* Main Content Styling */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff; /* Background color for readability */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex-grow: 1;
+}
+
+.cart-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.item-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.cart-item {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 200px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.cart-item img {
+    max-width: 100%;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.cart-item-details {
+    text-align: center;
+}
+
+.cart-item-details h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.cart-item-details p {
+    margin: 5px 0;
+}
+
+/* Quantity Controls Styling */
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.quantity-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    height: 32px; /* Ensuring uniform height */
+}
+
+.quantity-btn:hover {
+    background-color: #45a049;
+}
+
+.quantity-input {
+    width: 40px;
+    height: 32px; /* Match button height */
+    text-align: center;
+    border: 1px solid #ddd;
+    margin: 0 5px;
+    font-size: 1rem;
+    padding: 5px 0; /* Adjust vertical padding for consistency */
+}
+
+.remove-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.remove-btn:hover {
+    background-color: #e53935;
+}
+
+/* Total Price Styling */
+.total-price {
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Checkout Button Styling */
+.checkout-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.checkout-btn:hover {
+    background-color: #45a049;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 0.5rem 0;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+/* Notification Styling */
+.notification {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4caf50;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.notification.error {
+    background-color: #f44336;
+}
+
+.notification .close-btn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
