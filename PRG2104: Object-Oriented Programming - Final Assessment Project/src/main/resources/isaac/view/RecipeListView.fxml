@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="isaac.view.RecipeListController"
+            prefWidth="1000" prefHeight="600">
+
+    <!-- TOP: Search and controls -->
+    <top>
+        <VBox spacing="8.0">
+            <padding>
+                <Insets top="12" right="12" bottom="8" left="12"/>
+            </padding>
+
+            <!-- Search bar -->
+            <HBox spacing="10.0" alignment="CENTER_LEFT">
+                <Label text="Search Recipes:" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="searchField" promptText="Search by recipe name or ingredient..."
+                           prefWidth="400" HBox.hgrow="SOMETIMES"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button fx:id="refreshButton" text="Refresh" onAction="#handleRefresh"
+                        style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            </HBox>
+
+            <!-- Action buttons -->
+            <HBox spacing="10.0" alignment="CENTER_LEFT">
+                <Label fx:id="recipeCountLabel" text="Total: 0 recipes" style="-fx-font-weight: bold;"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button fx:id="viewButton" text="View Details" onAction="#handleView"
+                        style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                <Button fx:id="editButton" text="Edit Recipe" onAction="#handleEdit"
+                        style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                <Button fx:id="deleteButton" text="Delete Recipe" onAction="#handleDelete"
+                        style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            </HBox>
+
+            <Separator/>
+        </VBox>
+    </top>
+
+    <!-- CENTER: Recipe list and details -->
+    <center>
+        <SplitPane orientation="HORIZONTAL" dividerPositions="0.4">
+            <items>
+                <!-- Left: Recipe List -->
+                <VBox spacing="8.0">
+                    <padding>
+                        <Insets top="8" right="8" bottom="8" left="12"/>
+                    </padding>
+
+                    <Label text="Recipe List" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+
+                    <ListView fx:id="recipeListView" VBox.vgrow="ALWAYS" prefHeight="400">
+                        <placeholder>
+                            <Label text="No recipes found.&#10;Create your first recipe in the Recipe Editor!"/>
+                        </placeholder>
+                    </ListView>
+                </VBox>
+
+                <!-- Right: Recipe Details -->
+                <VBox spacing="8.0">
+                    <padding>
+                        <Insets top="8" right="12" bottom="8" left="8"/>
+                    </padding>
+
+                    <Label text="Recipe Details" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+
+                    <TextArea fx:id="recipeDetailsArea"
+                              editable="false"
+                              wrapText="true"
+                              VBox.vgrow="ALWAYS"
+                              promptText="Select a recipe from the list to view its details..."
+                              style="-fx-font-family: 'Consolas', 'Monaco', 'Courier New', monospace; -fx-font-size: 12px;"/>
+                </VBox>
+            </items>
+        </SplitPane>
+    </center>
+
+    <!-- BOTTOM: Status or additional info -->
+    <bottom>
+        <HBox spacing="8.0" alignment="CENTER_LEFT">
+            <padding>
+                <Insets top="8" right="12" bottom="12" left="12"/>
+            </padding>
+
+            <Label text="Recipe storage location:" style="-fx-font-weight: bold;"/>
+            <Label text="data/recipes/" style="-fx-font-family: monospace;"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <Label text="Select a recipe to view details, edit, or delete" style="-fx-text-fill: #666;"/>
+        </HBox>
+    </bottom>
+</BorderPane>
