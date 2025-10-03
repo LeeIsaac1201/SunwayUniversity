@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="isaac.view.AddEditUserController"
+      spacing="10">
+
+    <padding>
+        <Insets top="15" right="15" bottom="15" left="15"/>
+    </padding>
+
+    <Label fx:id="lblDialogTitle" text="Add New User" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+    <GridPane hgap="10" vgap="10">
+        <columnConstraints>
+            <ColumnConstraints halignment="RIGHT" minWidth="140"/>
+            <ColumnConstraints hgrow="ALWAYS"/>
+            <ColumnConstraints minWidth="20"/> <!-- For BMI icon -->
+        </columnConstraints>
+
+        <!-- Basic user information -->
+        <Label text="Username:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="tfUsername" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Email:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="tfEmail" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Date of Birth:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="dpDob" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Sex:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="cbSex" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <!-- Health / Fitness info -->
+        <Label text="Height (cm):" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <TextField fx:id="tfHeight" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+        <Label text="Weight (kg):" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        <TextField fx:id="tfWeight" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+        <Label text="Body Mass Index:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+        <TextField fx:id="tfBmi" GridPane.rowIndex="6" GridPane.columnIndex="1" editable="false"/>
+
+        <!-- BMI info button -->
+        <Button text="?"
+                style="-fx-background-color: #1976d2; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-min-width: 22; -fx-min-height: 22; -fx-max-width: 22; -fx-max-height: 22; -fx-pref-width: 22; -fx-pref-height: 22; -fx-background-radius: 50%; -fx-cursor: hand; -fx-padding: 0; -fx-border-width: 0; -fx-focus-color: transparent; -fx-faint-focus-color: transparent;"
+                GridPane.rowIndex="6" GridPane.columnIndex="2"
+                onAction="#showBmiInfo"
+                focusTraversable="false"/>
+
+        <Label text="Activity Level:" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="cbActivityLevel" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+
+        <Label text="Target Weight (kg):" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+        <TextField fx:id="tfTargetWeight" GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+
+        <Label text="Dietary Preferences:" GridPane.rowIndex="9" GridPane.columnIndex="0"/>
+        <TextField fx:id="tfDietaryPreferences" GridPane.rowIndex="9" GridPane.columnIndex="1"/>
+
+        <Label text="Allergies:" GridPane.rowIndex="10" GridPane.columnIndex="0"/>
+        <TextField fx:id="tfAllergies" GridPane.rowIndex="10" GridPane.columnIndex="1"/>
+
+        <Label text="Health Flags:" GridPane.rowIndex="11" GridPane.columnIndex="0"/>
+        <TextField fx:id="tfHealthFlags" GridPane.rowIndex="11" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <!-- Buttons -->
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Cancel"
+                style="-fx-background-color: #e0e0e0; -fx-text-fill: black; -fx-font-weight: bold; -fx-cursor: hand; -fx-padding: 5 15; -fx-background-radius: 5;"
+                onAction="#onCancel"/>
+        <Button text="Save"
+                style="-fx-background-color: #1976d2; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand; -fx-padding: 5 15; -fx-background-radius: 5;"
+                onAction="#onSave"/>
+    </HBox>
+</VBox>
