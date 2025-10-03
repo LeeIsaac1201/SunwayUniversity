@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="isaac.view.AddFoodController"
+      spacing="20"
+      style="-fx-background-color: #f8f9fa;">
+
+    <padding>
+        <Insets top="20" right="30" bottom="20" left="30"/>
+    </padding>
+
+    <!-- Form Content -->
+    <GridPane hgap="12" vgap="12" alignment="CENTER">
+
+        <!-- Food Name -->
+        <Label text="Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"
+               style="-fx-font-weight: normal; -fx-text-fill: #495057;"/>
+        <TextField fx:id="nameField"
+                   promptText="Enter food name (e.g., Broccoli)"
+                   GridPane.rowIndex="0" GridPane.columnIndex="1"
+                   style="-fx-background-color: #ffffff; -fx-border-color: #ced4da; -fx-border-width: 1; -fx-border-radius: 4; -fx-padding: 8;"/>
+
+        <!-- Category -->
+        <Label text="Category:" GridPane.rowIndex="1" GridPane.columnIndex="0"
+               style="-fx-font-weight: normal; -fx-text-fill: #495057;"/>
+        <ChoiceBox fx:id="categoryChoice"
+                   GridPane.rowIndex="1" GridPane.columnIndex="1"
+                   style="-fx-background-color: #ffffff; -fx-border-color: #ced4da; -fx-border-width: 1; -fx-border-radius: 4;"/>
+
+        <!-- Serving Size -->
+        <Label text="Serving (g):" GridPane.rowIndex="2" GridPane.columnIndex="0"
+               style="-fx-font-weight: normal; -fx-text-fill: #495057;"/>
+        <TextField fx:id="servingField"
+                   promptText="e.g., 100"
+                   GridPane.rowIndex="2" GridPane.columnIndex="1"
+                   style="-fx-background-color: #ffffff; -fx-border-color: #ced4da; -fx-border-width: 1; -fx-border-radius: 4; -fx-padding: 8;"/>
+
+        <!-- Nutrients -->
+        <Label text="Nutrients:" GridPane.rowIndex="3" GridPane.columnIndex="0"
+               style="-fx-font-weight: normal; -fx-text-fill: #495057;"/>
+        <TextArea fx:id="nutrientsArea"
+                  promptText="Format: Calories:52.0g,Protein: 0.3g,Carbohydrates:13.8g, Fibre:2.4g,Vitamin C:4.6mg,Potassium: 107.0mg,Iron:0.1mg"
+                  prefRowCount="4"
+                  GridPane.rowIndex="3" GridPane.columnIndex="1"
+                  style="-fx-background-color: #ffffff; -fx-border-color: #ced4da; -fx-border-width: 1; -fx-border-radius: 4; -fx-padding: 8;"/>
+
+        <!-- Image Path with Select Image button -->
+        <Label text="Image:" GridPane.rowIndex="4" GridPane.columnIndex="0"
+               style="-fx-font-weight: normal; -fx-text-fill: #495057;"/>
+        <VBox spacing="8" GridPane.rowIndex="4" GridPane.columnIndex="1">
+            <HBox spacing="8">
+                <TextField fx:id="imageField"
+                           promptText="Optional image path or URL"
+                           HBox.hgrow="ALWAYS"
+                           style="-fx-background-color: #ffffff; -fx-border-color: #ced4da; -fx-border-width: 1; -fx-border-radius: 4; -fx-padding: 8;"/>
+                <Button text="📁 Browse" fx:id="selectImageButton"
+                        style="-fx-background-color: #6c757d; -fx-text-fill: white; -fx-font-size: 12px; -fx-font-weight: bold; -fx-padding: 8 12; -fx-background-radius: 4; -fx-border-color: #545b62; -fx-border-width: 1; -fx-border-radius: 4; -fx-cursor: hand;"/>
+            </HBox>
+        </VBox>
+    </GridPane>
+
+    <!-- Button Container - Bottom Right -->
+    <HBox alignment="CENTER_RIGHT" spacing="12">
+        <Button text="Cancel"
+                fx:id="cancelButton"
+                onAction="#handleCancel"
+                style="-fx-background-color: #6c757d; -fx-text-fill: white; -fx-font-size: 13px; -fx-font-weight: bold; -fx-padding: 10 20; -fx-background-radius: 6; -fx-border-color: #545b62; -fx-border-width: 1; -fx-border-radius: 6; -fx-cursor: hand;"/>
+
+        <Button text="💾 Save"
+                fx:id="saveButton"
+                onAction="#handleSave"
+                style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 13px; -fx-font-weight: bold; -fx-padding: 10 20; -fx-background-radius: 6; -fx-border-color: #1e7e34; -fx-border-width: 1; -fx-border-radius: 6; -fx-cursor: hand;"/>
+    </HBox>
+
+</VBox>
