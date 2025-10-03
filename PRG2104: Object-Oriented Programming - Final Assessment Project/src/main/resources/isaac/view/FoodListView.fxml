@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="isaac.view.FoodListController"
+            prefWidth="600" prefHeight="400"
+            style="-fx-background-color: #f8f9fa;">
+
+    <!-- Top toolbar with Add, Edit, Delete, Search -->
+    <top>
+        <ToolBar style="-fx-background-color: #ffffff; -fx-border-color: #dee2e6; -fx-border-width: 0 0 1 0; -fx-padding: 10;">
+            <Button fx:id="addButton" text="+ Add" onAction="#handleAdd"
+                    style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 13px; -fx-font-weight: bold; -fx-padding: 8 16; -fx-background-radius: 6; -fx-border-color: #1e7e34; -fx-border-width: 1; -fx-border-radius: 6; -fx-cursor: hand;" />
+            <Button fx:id="editButton" text="✏ Edit" onAction="#handleEdit"
+                    style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-font-size: 13px; -fx-font-weight: bold; -fx-padding: 8 16; -fx-background-radius: 6; -fx-border-color: #0056b3; -fx-border-width: 1; -fx-border-radius: 6; -fx-cursor: hand;" />
+            <Button fx:id="deleteButton" text="🗑 Delete" onAction="#handleDelete"
+                    style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-font-size: 13px; -fx-font-weight: bold; -fx-padding: 8 16; -fx-background-radius: 6; -fx-border-color: #c82333; -fx-border-width: 1; -fx-border-radius: 6; -fx-cursor: hand;" />
+            <Region HBox.hgrow="ALWAYS" />
+            <TextField fx:id="searchField" promptText="🔍 Search by name..."
+                       style="-fx-background-color: #ffffff; -fx-border-color: #ced4da; -fx-border-width: 1; -fx-border-radius: 6; -fx-padding: 8 12; -fx-font-size: 13px; -fx-pref-width: 200;" />
+            <Button fx:id="searchButton" text="Search" onAction="#handleSearch"
+                    style="-fx-background-color: #6c757d; -fx-text-fill: white; -fx-font-size: 13px; -fx-font-weight: bold; -fx-padding: 8 16; -fx-background-radius: 6; -fx-border-color: #545b62; -fx-border-width: 1; -fx-border-radius: 6; -fx-cursor: hand;" />
+        </ToolBar>
+    </top>
+
+    <!-- Center table listing FoodItems -->
+    <center>
+        <TableView fx:id="foodTable" prefWidth="580" prefHeight="350"
+                   style="-fx-background-color: #ffffff; -fx-border-color: #dee2e6; -fx-border-width: 1; -fx-border-radius: 8;">
+            <columns>
+                <TableColumn fx:id="nameColumn" text="Name" prefWidth="150" />
+                <TableColumn fx:id="categoryColumn" text="Category" prefWidth="100" />
+                <TableColumn fx:id="servingColumn" text="Serving (g)" prefWidth="100" />
+                <TableColumn fx:id="nutrientColumn" text="Nutrients" prefWidth="230" />
+            </columns>
+        </TableView>
+    </center>
+
+    <padding>
+        <Insets top="15" right="15" bottom="15" left="15" />
+    </padding>
+</BorderPane>
