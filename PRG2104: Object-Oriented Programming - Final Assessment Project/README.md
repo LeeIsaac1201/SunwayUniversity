@@ -43,11 +43,14 @@ The project may receive further updates after submission (bug fixes, user experi
 
 ---
 
-## Installation and Running Instructions 🛠️
+## Installation Requirements and Running Instructions 🛠️
 1. **Requirements**
-- Java Development Kit (JDK) 11 or later installed and on your PATH (`java -version`).
-- sbt (recommended) or an IDE that supports sbt/Scala (IntelliJ IDEA with the Scala plugin).
-- JavaFX software development kit SDK (matching your JDK) only if you plan to run the app outside an IDE that already supplies JavaFX.
+- **Scala:** 3.3.4
+- **sbt:** (see `project/build.properties` for the exact version, e.g., 1.8.2)
+- **Java Development Kit (JDK):** 11 or later, installed and on your PATH (`java -version`)
+- **JavaFX:** 21.0.4 (OS-specific binaries are automatically selected by the build)
+- **ScalaFX:** 21.0.0-R32
+- An IDE that supports sbt/Scala (e.g., IntelliJ IDEA with the Scala plugin), or use sbt from the command line
 2. **Using sbt (recommended):** Compile and run from project root:
     ```
     # Compile sources and fetch dependencies.
@@ -95,9 +98,13 @@ The project may receive further updates after submission (bug fixes, user experi
     ```
    (Use this only for small demos: sbt handles dependencies and resources more reliably.)
 6. **Notes and troubleshooting**
-- `NoClassDefFoundError: javafx/application/Application` → JavaFX not on module-path. Fix by installing JavaFX and using the `--module-path`/`--add-modules` flags above or run from an IDE that bundles JavaFX.
+- `NoClassDefFoundError: javafx/application/Application` → JavaFX not on module-path. Fix by installing JavaFX and using the `--module-path`/`--add-modules` flags above, or run from an IDE that bundles JavaFX.
 - Images/FXML not found → ensure `src/main/resources/` contains `fxml/` and `images/` and that working directory is project root when running.
 - If file I/O fails (e.g., saving `food_items.txt`), check that the process has write permission for the data folder (consider using a `data/` folder under the project root).
+
+**Important:** ❗
+- This project is tested and intended to work with the above versions.
+- Using newer or older versions of Scala, sbt, JavaFX, or ScalaFX may cause build or runtime errors.
 
 ---
 
@@ -124,9 +131,9 @@ The project may receive further updates after submission (bug fixes, user experi
 8. **Manage user profiles**
     - Open the profile manager (Add/Edit profile) to create or edit user profiles stored via `UserProfileStorage`. Profiles capture metadata and health parameters (height, weight, activity level, goal, target weight). Save profile changes to persist them to `data/user_profiles.txt`.
 9. **Image handling**
-    - When adding/editing a food item, you may enter an image path relative to `src/main/resources/images/` or an absolute system path. The UI attempts to load and scale the image for previews; if the image is missing a placeholder is shown. Use relative resource paths if you want the images bundled with the project.
+    - When adding/editing a food item, you may enter an image path relative to `src/main/resources/images/` or an absolute system path. The UI attempts to load and scale the image for previews; if the image is missing, a placeholder is shown. Use relative resource paths if you want the images bundled with the project.
 10. **Saving and data safety**
-    - Most changes are saved when the user confirms Save/OK in dialogs. The `FoodItemStorage` and `UserProfileStorage` utilities handle serialisation and file writes (read-modify-write or rewrite strategies). If an I/O error occurs the UI reports it so you can retry or inspect file permissions.
+    - Most changes are saved when the user confirms Save/OK in dialogs. The `FoodItemStorage` and `UserProfileStorage` utilities handle serialisation and file writes (read-modify-write or rewrite strategies). If an I/O error occurs, the UI reports it so you can retry or inspect file permissions.
 11. **Exit and resume**
     - On exit, any saved records remain on disk; reopening the application reloads them from the data files so users can resume where they left off.
 
