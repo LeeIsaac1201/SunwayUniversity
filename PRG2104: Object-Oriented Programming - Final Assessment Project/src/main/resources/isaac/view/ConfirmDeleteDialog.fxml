@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="isaac.view.ConfirmDeleteController" prefWidth="420" prefHeight="160" style="-fx-background-color: #f8f9fa;">
+    <children>
+        <VBox spacing="20" alignment="CENTER" AnchorPane.topAnchor="15" AnchorPane.bottomAnchor="15" AnchorPane.leftAnchor="15" AnchorPane.rightAnchor="15">
+            <Label fx:id="messageLabel" wrapText="true" maxWidth="Infinity"
+                   style="-fx-font-size: 14px; -fx-text-fill: #495057; -fx-font-family: 'Segoe UI', Arial, sans-serif; -fx-text-alignment: center; -fx-padding: 10;" />
+            <HBox spacing="15" alignment="CENTER">
+                <Button fx:id="yesButton" text="Yes, Delete" onAction="#handleYes"
+                        prefWidth="110" prefHeight="35"
+                        style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-font-size: 13px; -fx-font-weight: 500; -fx-font-family: 'Segoe UI', Arial, sans-serif; -fx-padding: 10 20; -fx-background-radius: 6; -fx-border-color: #c82333; -fx-border-width: 1; -fx-border-radius: 6; -fx-cursor: hand;" />
+                <Button fx:id="cancelButton" text="Cancel" onAction="#handleCancel"
+                        prefWidth="110" prefHeight="35"
+                        style="-fx-background-color: #f8f9fa; -fx-text-fill: #495057; -fx-font-size: 13px; -fx-font-weight: 500; -fx-font-family: 'Segoe UI', Arial, sans-serif; -fx-padding: 10 20; -fx-background-radius: 6; -fx-border-color: #dee2e6; -fx-border-width: 1; -fx-border-radius: 6; -fx-cursor: hand;" />
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>
