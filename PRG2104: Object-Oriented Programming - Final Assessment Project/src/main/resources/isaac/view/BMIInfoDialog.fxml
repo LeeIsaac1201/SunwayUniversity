@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="isaac.view.BMIInfoDialogController"
+      spacing="15" style="-fx-background-color: white;">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- Header -->
+    <Label text="Body Mass Index (BMI) Information"
+           style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #1976d2;"/>
+
+    <Separator/>
+
+    <!-- BMI Categories Table -->
+    <VBox spacing="10">
+        <Label text="BMI Categories for Adults (20+ years)"
+               style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+
+        <GridPane hgap="15" vgap="8" style="-fx-border-color: #e0e0e0; -fx-border-width: 1; -fx-background-color: #fafafa;">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <columnConstraints>
+                <ColumnConstraints halignment="LEFT" minWidth="140" prefWidth="140"/>
+                <ColumnConstraints halignment="LEFT" minWidth="120" prefWidth="120"/>
+                <ColumnConstraints halignment="LEFT" minWidth="100" prefWidth="100"/>
+            </columnConstraints>
+
+            <!-- Headers -->
+            <Label text="Category" GridPane.rowIndex="0" GridPane.columnIndex="0"
+                   style="-fx-font-weight: bold; -fx-background-color: #1976d2; -fx-text-fill: white; -fx-padding: 5;"/>
+            <Label text="BMI Range (kg/m²)" GridPane.rowIndex="0" GridPane.columnIndex="1"
+                   style="-fx-font-weight: bold; -fx-background-color: #1976d2; -fx-text-fill: white; -fx-padding: 5;"/>
+            <Label text="Health Risk" GridPane.rowIndex="0" GridPane.columnIndex="2"
+                   style="-fx-font-weight: bold; -fx-background-color: #1976d2; -fx-text-fill: white; -fx-padding: 5;"/>
+
+            <!-- Data rows -->
+            <Label text="Underweight" GridPane.rowIndex="1" GridPane.columnIndex="0"
+                   style="-fx-padding: 5; -fx-background-color: #e3f2fd;"/>
+            <Label text="Less than 18.5" GridPane.rowIndex="1" GridPane.columnIndex="1"
+                   style="-fx-padding: 5; -fx-background-color: #e3f2fd;"/>
+            <Label text="Increased" GridPane.rowIndex="1" GridPane.columnIndex="2"
+                   style="-fx-padding: 5; -fx-background-color: #e3f2fd;"/>
+
+            <Label text="Healthy Weight" GridPane.rowIndex="2" GridPane.columnIndex="0"
+                   style="-fx-padding: 5; -fx-background-color: #e8f5e8;"/>
+            <Label text="18.5 to 24.9" GridPane.rowIndex="2" GridPane.columnIndex="1"
+                   style="-fx-padding: 5; -fx-background-color: #e8f5e8;"/>
+            <Label text="Normal" GridPane.rowIndex="2" GridPane.columnIndex="2"
+                   style="-fx-padding: 5; -fx-background-color: #e8f5e8;"/>
+
+            <Label text="Overweight" GridPane.rowIndex="3" GridPane.columnIndex="0"
+                   style="-fx-padding: 5; -fx-background-color: #fff3e0;"/>
+            <Label text="25.0 to 29.9" GridPane.rowIndex="3" GridPane.columnIndex="1"
+                   style="-fx-padding: 5; -fx-background-color: #fff3e0;"/>
+            <Label text="Moderate" GridPane.rowIndex="3" GridPane.columnIndex="2"
+                   style="-fx-padding: 5; -fx-background-color: #fff3e0;"/>
+
+            <Label text="Obesity Class I" GridPane.rowIndex="4" GridPane.columnIndex="0"
+                   style="-fx-padding: 5; -fx-background-color: #ffebee;"/>
+            <Label text="30.0 to 34.9" GridPane.rowIndex="4" GridPane.columnIndex="1"
+                   style="-fx-padding: 5; -fx-background-color: #ffebee;"/>
+            <Label text="High" GridPane.rowIndex="4" GridPane.columnIndex="2"
+                   style="-fx-padding: 5; -fx-background-color: #ffebee;"/>
+
+            <Label text="Obesity Class II" GridPane.rowIndex="5" GridPane.columnIndex="0"
+                   style="-fx-padding: 5; -fx-background-color: #ffcdd2;"/>
+            <Label text="35.0 to 39.9" GridPane.rowIndex="5" GridPane.columnIndex="1"
+                   style="-fx-padding: 5; -fx-background-color: #ffcdd2;"/>
+            <Label text="Very High" GridPane.rowIndex="5" GridPane.columnIndex="2"
+                   style="-fx-padding: 5; -fx-background-color: #ffcdd2;"/>
+
+            <Label text="Obesity Class III" GridPane.rowIndex="6" GridPane.columnIndex="0"
+                   style="-fx-padding: 5; -fx-background-color: #f8bbd9;"/>
+            <Label text="40.0 and above" GridPane.rowIndex="6" GridPane.columnIndex="1"
+                   style="-fx-padding: 5; -fx-background-color: #f8bbd9;"/>
+            <Label text="Extremely High" GridPane.rowIndex="6" GridPane.columnIndex="2"
+                   style="-fx-padding: 5; -fx-background-color: #f8bbd9;"/>
+        </GridPane>
+    </VBox>
+
+    <Separator/>
+
+    <!-- Additional Information -->
+    <VBox spacing="8">
+        <Label text="Important Notes:" style="-fx-font-weight: bold; -fx-font-size: 13px;"/>
+        <Label text="• BMI is calculated as: weight (kg) ÷ [height (m)]²"
+               style="-fx-font-size: 12px; -fx-wrap-text: true;"/>
+        <Label text="• BMI categories are for adults aged 20 and older"
+               style="-fx-font-size: 12px; -fx-wrap-text: true;"/>
+        <Label text="• BMI may not be accurate for athletes, elderly, or pregnant women"
+               style="-fx-font-size: 12px; -fx-wrap-text: true;"/>
+        <Label text="• Always consult healthcare professionals for medical advice"
+               style="-fx-font-size: 12px; -fx-wrap-text: true;"/>
+    </VBox>
+
+    <!-- Close Button -->
+    <HBox alignment="CENTER" spacing="10">
+        <Button text="Close" onAction="#closeDialog"
+                style="-fx-background-color: #1976d2; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 20 8 20;"/>
+    </HBox>
+</VBox>
