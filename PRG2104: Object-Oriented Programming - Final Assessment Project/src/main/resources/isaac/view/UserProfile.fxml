@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="isaac.view.UserProfileController"
+            prefWidth="800" prefHeight="400">
+
+    <!-- Top toolbar with action buttons -->
+    <top>
+        <ToolBar>
+            <Button fx:id="addButton" text="Add User" onAction="#onAddUser"
+                    style="-fx-font-weight: bold; -fx-background-color: #4CAF50; -fx-text-fill: white; -fx-background-radius: 6;"/>
+            <Button fx:id="editButton" text="Edit User" disable="true" onAction="#onEditUser"
+                    style="-fx-font-weight: bold; -fx-background-color: #2196F3; -fx-text-fill: white; -fx-background-radius: 6;"/>
+            <Button fx:id="deleteButton" text="Delete User" disable="true" onAction="#onDeleteUser"
+                    style="-fx-font-weight: bold; -fx-background-color: #f44336; -fx-text-fill: white; -fx-background-radius: 6;"/>
+        </ToolBar>
+    </top>
+
+    <!-- Center: TableView displaying user profiles -->
+    <center>
+        <TableView fx:id="userTable" prefHeight="350" prefWidth="800">
+            <columns>
+                <TableColumn fx:id="usernameColumn" text="Username" prefWidth="120"/>
+                <TableColumn fx:id="emailColumn" text="Email" prefWidth="180"/>
+                <TableColumn fx:id="dobColumn" text="Date of Birth" prefWidth="120"/>
+                <TableColumn fx:id="sexColumn" text="Sex" prefWidth="80"/>
+                <TableColumn fx:id="heightColumn" text="Height (cm)" prefWidth="100"/>
+                <TableColumn fx:id="weightColumn" text="Weight (kg)" prefWidth="100"/>
+                <TableColumn fx:id="bmiColumn" text="Body Mass Index" prefWidth="80"/>
+                <TableColumn fx:id="activityLevelColumn" text="Activity Level" prefWidth="120"/>
+                <TableColumn fx:id="targetWeightColumn" text="Target Weight (kg)" prefWidth="120"/>
+                <TableColumn fx:id="dailyCalorieGoalColumn" text="Daily Calorie Goal" prefWidth="140"/>
+                <TableColumn fx:id="dietaryPreferencesColumn" text="Dietary Preferences" prefWidth="140"/>
+                <TableColumn fx:id="allergiesColumn" text="Allergies" prefWidth="140"/>
+                <TableColumn fx:id="healthFlagsColumn" text="Health Flags" prefWidth="140"/>
+            </columns>
+        </TableView>
+    </center>
+
+</BorderPane>
