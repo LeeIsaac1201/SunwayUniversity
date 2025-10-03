@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="isaac.view.DashboardController">
+
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <center>
+        <TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab fx:id="foodTab" text="Food List">
+                    <content>
+                        <!-- Placeholder for FoodListView -->
+                        <AnchorPane fx:id="foodListContainer" />
+                    </content>
+                </Tab>
+
+                <Tab fx:id="recipeListTab" text="Recipe List">
+                    <content>
+                        <!-- Placeholder for the read-only recipe list (recipes + instructions) -->
+                        <AnchorPane fx:id="recipeListContainer" />
+                    </content>
+                </Tab>
+
+                <Tab fx:id="recipeBuilderTab" text="Recipe Builder">
+                    <content>
+                        <!-- Placeholder for Recipe Editor (add / edit / delete) -->
+                        <AnchorPane fx:id="recipeBuilderContainer" />
+                    </content>
+                </Tab>
+
+                <Tab fx:id="userProfileTab" text="User Profile">
+                    <content>
+                        <!-- Placeholder for UserProfileView -->
+                        <AnchorPane fx:id="userProfileContainer" />
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </center>
+
+</BorderPane>
