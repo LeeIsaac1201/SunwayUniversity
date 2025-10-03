@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<DialogPane fx:id="detailDialogPane"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="isaac.view.FoodDetailController"
+            style="-fx-background-color: #f8f9fa; -fx-border-color: #e9ecef; -fx-border-width: 1; -fx-border-radius: 8;">
+
+    <content>
+        <VBox spacing="16.0">
+            <padding>
+                <Insets top="24.0" right="24.0" bottom="20.0" left="24.0"/>
+            </padding>
+
+            <!-- Image with border -->
+            <VBox alignment="CENTER">
+                <ImageView fx:id="foodImage"
+                           fitHeight="160.0"
+                           fitWidth="160.0"
+                           preserveRatio="true"
+                           style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 8, 0, 0, 2); -fx-border-color: #dee2e6; -fx-border-width: 1; -fx-border-radius: 8;"/>
+            </VBox>
+
+            <!-- Information grid with better styling -->
+            <GridPane hgap="15.0" vgap="12.0" style="-fx-background-color: #ffffff; -fx-padding: 16; -fx-border-color: #e9ecef; -fx-border-width: 1; -fx-border-radius: 6;">
+                <Label text="Name:"
+                       GridPane.rowIndex="0"
+                       GridPane.columnIndex="0"
+                       style="-fx-font-weight: bold; -fx-text-fill: #495057; -fx-font-size: 13px;"/>
+                <Label fx:id="nameLabel"
+                       GridPane.rowIndex="0"
+                       GridPane.columnIndex="1"
+                       style="-fx-text-fill: #212529; -fx-font-size: 13px;"/>
+
+                <Label text="Category:"
+                       GridPane.rowIndex="1"
+                       GridPane.columnIndex="0"
+                       style="-fx-font-weight: bold; -fx-text-fill: #495057; -fx-font-size: 13px;"/>
+                <Label fx:id="categoryLabel"
+                       GridPane.rowIndex="1"
+                       GridPane.columnIndex="1"
+                       style="-fx-text-fill: #212529; -fx-font-size: 13px;"/>
+
+                <Label text="Serving Size:"
+                       GridPane.rowIndex="2"
+                       GridPane.columnIndex="0"
+                       style="-fx-font-weight: bold; -fx-text-fill: #495057; -fx-font-size: 13px;"/>
+                <Label fx:id="servingLabel"
+                       GridPane.rowIndex="2"
+                       GridPane.columnIndex="1"
+                       style="-fx-text-fill: #212529; -fx-font-size: 13px;"/>
+
+                <Label text="Nutrients:"
+                       GridPane.rowIndex="3"
+                       GridPane.columnIndex="0"
+                       style="-fx-font-weight: bold; -fx-text-fill: #495057; -fx-font-size: 13px;"
+                       GridPane.valignment="TOP"/>
+                <VBox fx:id="nutrientsBox"
+                      spacing="3.0"
+                      GridPane.rowIndex="3"
+                      GridPane.columnIndex="1"
+                      style="-fx-background-color: #f8f9fa; -fx-padding: 8; -fx-border-color: #e9ecef; -fx-border-width: 1; -fx-border-radius: 4;"/>
+            </GridPane>
+
+            <!-- Beautiful action buttons -->
+            <HBox spacing="12.0" alignment="CENTER_RIGHT" style="-fx-padding: 8 0 0 0;">
+                <Button fx:id="editButton"
+                        text="Edit"
+                        style="-fx-background-color: #007bff;
+                               -fx-text-fill: white;
+                               -fx-font-size: 13px;
+                               -fx-font-weight: bold;
+                               -fx-padding: 10 18;
+                               -fx-background-radius: 6;
+                               -fx-border-color: #0056b3;
+                               -fx-border-width: 1;
+                               -fx-border-radius: 6;
+                               -fx-cursor: hand;
+                               -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 4, 0, 0, 1);"/>
+
+                <Button fx:id="deleteButton"
+                        text="Delete"
+                        style="-fx-background-color: #dc3545;
+                               -fx-text-fill: white;
+                               -fx-font-size: 13px;
+                               -fx-font-weight: bold;
+                               -fx-padding: 10 18;
+                               -fx-background-radius: 6;
+                               -fx-border-color: #b02a37;
+                               -fx-border-width: 1;
+                               -fx-border-radius: 6;
+                               -fx-cursor: hand;
+                               -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 4, 0, 0, 1);"/>
+            </HBox>
+        </VBox>
+    </content>
+</DialogPane>
