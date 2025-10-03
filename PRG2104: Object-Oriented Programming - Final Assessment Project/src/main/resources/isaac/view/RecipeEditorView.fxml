@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="isaac.view.RecipeEditorController"
+            prefWidth="1000" prefHeight="600">
+
+    <!-- LEFT: Saved recipes list -->
+    <left>
+        <VBox spacing="8.0" prefWidth="220.0">
+            <padding>
+                <Insets top="12" right="8" bottom="12" left="12"/>
+            </padding>
+            <Label text="Saved Recipes" style="-fx-font-weight: bold;"/>
+            <ListView fx:id="savedRecipesList" VBox.vgrow="ALWAYS" />
+        </VBox>
+    </left>
+
+    <!-- TOP: Recipe name + actions -->
+    <top>
+        <HBox spacing="10.0" alignment="CENTER_LEFT">
+            <padding>
+                <Insets top="12" right="12" bottom="12" left="12"/>
+            </padding>
+
+            <Label text="Recipe:"/>
+            <TextField fx:id="recipeNameField" promptText="Enter recipe name" prefWidth="320"/>
+
+            <!-- Styled buttons (all bold now) -->
+            <Button text="Add Ingredient" onAction="#handleAddIngredient"
+                    style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-background-radius: 6; -fx-font-weight: bold;"/>
+            <Button fx:id="removeButton" text="Remove Selected" onAction="#handleRemoveSelected"
+                    style="-fx-background-color: #f44336; -fx-text-fill: white; -fx-background-radius: 6; -fx-font-weight: bold;"/>
+            <Button fx:id="saveButton" text="Save Recipe" onAction="#handleSaveRecipe"
+                    style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-background-radius: 6; -fx-font-weight: bold;"/>
+
+            <!-- image select + preview -->
+            <Button fx:id="selectImageButton" text="Select Image" mnemonicParsing="false"
+                    style="-fx-background-color: #9C27B0; -fx-text-fill: white; -fx-background-radius: 6; -fx-font-weight: bold;"/>
+            <ImageView fx:id="recipeImageView" fitWidth="64.0" fitHeight="64.0" preserveRatio="true" pickOnBounds="true"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Clear" mnemonicParsing="false" onAction="#handleClearRecipe"
+                    style="-fx-background-color: #FF9800; -fx-text-fill: white; -fx-background-radius: 6; -fx-font-weight: bold;"/>
+        </HBox>
+    </top>
+
+    <!-- CENTER: Ingredients table -->
+    <center>
+        <VBox spacing="8.0">
+            <padding>
+                <Insets top="8" right="8" bottom="8" left="8"/>
+            </padding>
+
+            <Label text="Ingredients" style="-fx-font-weight: bold;"/>
+
+            <TableView fx:id="ingredientTable" VBox.vgrow="ALWAYS" editable="true" prefHeight="360.0">
+                <columns>
+                    <TableColumn fx:id="foodColumn" text="Food Item" prefWidth="320.0" sortable="false"/>
+                    <TableColumn fx:id="qtyColumn" text="Qty (g)" prefWidth="120.0" sortable="false"/>
+                    <TableColumn fx:id="nutrientsColumn" text="Nutrient Totals" prefWidth="420.0" sortable="false"/>
+                </columns>
+
+                <placeholder>
+                    <Label text="No ingredients added — click Add Ingredient to start."/>
+                </placeholder>
+
+                <tableMenuButtonVisible>true</tableMenuButtonVisible>
+            </TableView>
+        </VBox>
+    </center>
+
+    <!-- BOTTOM: Nutrient summary + instructions -->
+    <bottom>
+        <VBox spacing="8.0">
+            <padding>
+                <Insets top="8" right="8" bottom="12" left="8"/>
+            </padding>
+
+            <HBox spacing="12.0" alignment="CENTER_LEFT">
+                <Label text="Aggregate Nutrient Summary (per recipe)" style="-fx-font-weight: bold;"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label fx:id="totalCaloriesLabel" text="Total calories: N/A" style="-fx-font-weight: bold;"/>
+            </HBox>
+
+            <SplitPane orientation="HORIZONTAL" prefHeight="160.0" dividerPositions="0.5">
+                <items>
+                    <VBox spacing="4.0" prefWidth="480.0">
+                        <Label text="Summary" style="-fx-font-weight: bold;"/>
+                        <TextArea fx:id="summaryArea" editable="false" wrapText="true" prefRowCount="6" VBox.vgrow="ALWAYS"
+                                  style="-fx-font-family: 'Consolas', 'Monaco', 'Courier New', monospace; -fx-font-size: 12px;"/>
+                    </VBox>
+
+                    <VBox spacing="4.0" prefWidth="480.0">
+                        <Label text="Instructions" style="-fx-font-weight: bold;"/>
+                        <TextArea fx:id="instructionsArea" promptText="Add preparation steps (one per line)"
+                                  wrapText="true" prefRowCount="6" VBox.vgrow="ALWAYS"/>
+                    </VBox>
+                </items>
+            </SplitPane>
+        </VBox>
+    </bottom>
+</BorderPane>
